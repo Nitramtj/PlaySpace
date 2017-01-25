@@ -1,0 +1,30 @@
+{
+  "name": "playspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node supportserver.js",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.4.2",
+    "peerjs": "^0.3.14",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "express": "^4.14.0",
+    "json-loader": "^0.5.4",
+    "peer": "^0.2.8",
+    "webpack": "beta",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
