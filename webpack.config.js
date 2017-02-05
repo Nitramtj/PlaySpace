@@ -1,10 +1,11 @@
 var path = require('path');
 
+// The last file in the entry script is exported, however all scripts will be ran
+
 const config = {
   entry: {
     client: './src/client.js',
     server: './src/server.js',
-    both: ['./src/sample1.js', './src/sample2.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
