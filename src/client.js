@@ -1,12 +1,19 @@
-var Peer = require('peerjs');
-var peer = new Peer({host: window.location.hostname, port: window.location.port, path: '/peerjs'});
+const Peer = require('peerjs');
+const peer = new Peer({host: window.location.hostname, port: window.location.port, path: '/peerjs'});
+const CanvasRenderer = require('./middleware/canvasrender');
+const Rx = require('rx');
 
-var conn = peer.connect('server');
-conn.on('open', function () {
-  console.log('connecion open!');
-  conn.send('hi!');
+document.addEventListener('DOMContentLoaded', function (event) {
+  const renderer = new CanvasRenderer(document.body, renderStream);
 });
 
-conn.on('data', function (data) {
-  document.write(data)
+const conn = peer.connect('server');
+conn.on('open', function () {
+});
+
+const renderStream = Rx.Observable.create(function (observer) {
+  conn.on('data', function (data) {
+    console.log('recieved');
+    observer.onNext(data);
+  });
 });

@@ -12,17 +12,23 @@
   "license": "MIT",
   "dependencies": {
     "immutable": "^3.8.1",
-    "react": "^15.4.2",
     "peerjs": "^0.3.14",
-    "react-dom": "^15.4.2"
+    "pixi.js": "^4.3.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-pixi": "^0.9.5"
   },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
+    "combine-arrays": "^1.0.2",
     "express": "^4.14.0",
     "json-loader": "^0.5.4",
+    "merge-array": "^1.0.0",
     "peer": "^0.2.8",
+    "rx": "^4.1.0",
+    "rxjs-es": "^5.0.0-beta.12",
     "webpack": "beta",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-dev-server": "^1.16.2"

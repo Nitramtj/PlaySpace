@@ -7,6 +7,7 @@ const config = {
     client: './src/client.js',
     server: './src/server.js',
   },
+  devtool: "cheap-eval-source-map",
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: "/",
