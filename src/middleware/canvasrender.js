@@ -30,9 +30,24 @@ class CanvasRender {
     this.canvas.height = this.element.clientHeight;
   }
 
+  renderTransform() {
+    this.context.resetTransform();
+    const size = Math.min(this.canvas.width, this.canvas.height);
+    // this.context.scale(this.canvas.width / 100, this.canvas.height / 100);
+    // this.context.translate((this.canvas.width - size) / 2, (this.canvas.height - size) / 2);
+    this.context.setTransform(
+      size / 100, 0,
+      0, size / 100,
+      (this.canvas.width - size) / 2, (this.canvas.height - size) / 2
+    );
+  }
+
   render() {
+    this.context.resetTransform();
     this.context.fillStyle = 'black';
-    this.context.fillRect(0, 0, 100, 100);
+    this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    this.renderTransform();
+    // this.context.fillRect(0, 0, 100, 100);
 
     if (this.objects != null) {
       this.objects.forEach(object => this.renderObject(object));

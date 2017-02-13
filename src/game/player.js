@@ -29,16 +29,18 @@ const increments = inputs.flatMap(function (event) {
   }
 });
 
+const initialState = {
+  x: 5,
+  y: 5,
+  color: 'grey'
+};
+
 const player = increments.scan(function (state, increment) {
   return {
     x: state.x + increment.x,
     y: state.y + increment.y,
     color: 'grey'
   };
-}).startWith({
-  x: 5,
-  y: 5,
-  color: 'grey'
-});
+}, initialState).startWith(initialState);
 
 module.exports = player;
