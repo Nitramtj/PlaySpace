@@ -1,0 +1,3 @@
+Now that hot swapping is better described in the attempt2 architecture doc. It is a bit easier to think about justifying how to write the MVP of PlaySpace. I wanted to use Observables because they seem like a good way to write code that can be hot swapped while preserving state, and also a good way to rewind when receiving correctional network updates. I started questioning whether they were the best though, because it seems I'll need to create my own implementation for the rewinding support.
+
+So far, they are not necessary for simple hot swapping. Lots of different code architectures can be hot swapped. The key justification for using observables will likely be serialization of state for networking.
