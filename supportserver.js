@@ -14,8 +14,14 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(express.static('public'));
 
-var server = app.listen(80, function () {
-  console.log("Listening on port 80!");
+var port = 9080;
+
+if (process.env.NODE_ENV === 'production') {
+  port = 80;
+}
+
+var server = app.listen(port, function () {
+  console.log('Listening on port ' + port + '!');
 });
 
 app.use('/peerjs', ExpressPeerServer(server));
